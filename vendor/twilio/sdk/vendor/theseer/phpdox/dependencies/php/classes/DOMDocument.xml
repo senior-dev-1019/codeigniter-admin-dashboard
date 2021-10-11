@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class xmlns="http://xml.phpdox.net/src" full="DOMDocument" namespace="" name="DOMDocument">
+  <extends name="DOMNode" full="DOMNode"/>
+  <member name="actualEncoding" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Deprecated. Actual encoding of the document, is a readonly equivalent to encoding."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="config" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Deprecated. Configuration used when DOMDocument::normalizeDocument is invoked."/>
+      <var type="DOMConfiguration"/>
+    </docblock>
+  </member>
+  <member name="doctype" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The Document Type Declaration associated with this document."/>
+      <var type="DOMDocumentType"/>
+    </docblock>
+  </member>
+  <member name="documentElement" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="This is a convenience attribute that allows direct access to the child node that is the document element of the document."/>
+      <var type="DOMElement"/>
+    </docblock>
+  </member>
+  <member name="documentURI" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The location of the document or NULL if undefined."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="encoding" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Encoding of the document, as specified by the XML declaration. This attribute is not present in the final DOM Level 3 specification, but is the only way of manipulating XML document encoding in this implementation."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="formatOutput" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Nicely formats output with indentation and extra space."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="implementation" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The DOMImplementation object that handles this document."/>
+      <var type="DOMImplementation"/>
+    </docblock>
+  </member>
+  <member name="preserveWhiteSpace" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Do not remove redundant white space. Default to TRUE."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="recover" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Proprietary. Enables recovery mode, i.e. trying to parse non-well formed documents. This attribute is not part of the DOM specification and is specific to libxml."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="resolveExternals" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Set it to TRUE to load external entities from a doctype declaration. This is useful for including character entities in your XML document."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="standalone" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Deprecated. Whether or not the document is standalone, as specified by the XML declaration, corresponds to xmlStandalone."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="strictErrorChecking" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Throws DOMException on errors. Default to TRUE."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="substituteEntities" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Proprietary. Whether or not to substitute entities. This attribute is not part of the DOM specification and is specific to libxml."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="validateOnParse" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Loads and validates against the DTD. Default to FALSE."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="version" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Deprecated. Version of XML, corresponds to xmlVersion."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="xmlEncoding" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="An attribute specifying, as part of the XML declaration, the encoding of this document. This is NULL when unspecified or when it is not known, such as when the Document was created in memory."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="xmlStandalone" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="An attribute specifying, as part of the XML declaration, whether this document is standalone. This is FALSE when unspecified."/>
+      <var type="bool"/>
+    </docblock>
+  </member>
+  <member name="xmlVersion" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="An attribute specifying, as part of the XML declaration, the version number of this document. If there is no declaration and if this document supports the &quot;XML&quot; feature, the value is &quot;1.0&quot;."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="nodeName" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Returns the most accurate name for the current node type"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="nodeValue" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The value of this node, depending on its type. Contrary to the W3C specification, the node value of DOMElement nodes is equal to DOMNode::textContent instead of NULL."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="nodeType" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Gets the type of the node. One of the predefined XML_xxx_NODE constants"/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="parentNode" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The parent of this node. If there is no such node, this returns NULL."/>
+      <var type="DOMNode"/>
+    </docblock>
+  </member>
+  <member name="childNodes" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="A DOMNodeList that contains all children of this node. If there are no children, this is an empty DOMNodeList."/>
+      <var type="DOMNodeList"/>
+    </docblock>
+  </member>
+  <member name="firstChild" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The first child of this node. If there is no such node, this returns NULL."/>
+      <var type="DOMNode"/>
+    </docblock>
+  </member>
+  <member name="lastChild" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The last child of this node. If there is no such node, this returns NULL."/>
+      <var type="DOMNode"/>
+    </docblock>
+  </member>
+  <member name="previousSibling" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The node immediately preceding this node. If there is no such node, this returns NULL."/>
+      <var type="DOMNode"/>
+    </docblock>
+  </member>
+  <member name="nextSibling" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The node immediately following this node. If there is no such node, this returns NULL."/>
+      <var type="DOMNode"/>
+    </docblock>
+  </member>
+  <member name="attributes" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="A DOMNamedNodeMap containing the attributes of this node (if it is a DOMElement) or NULL otherwise."/>
+      <var type="DOMNamedNodeMap"/>
+    </docblock>
+  </member>
+  <member name="ownerDocument" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The DOMDocument object associated with this node."/>
+      <var type="DOMDocument"/>
+    </docblock>
+  </member>
+  <member name="namespaceURI" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The namespace URI of this node, or NULL if it is unspecified."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="prefix" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The namespace prefix of this node, or NULL if it is unspecified."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="localName" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="Returns the local part of the qualified name of this node."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="baseURI" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The absolute base URI of this node or NULL if the implementation wasn't able to obtain an absolute URI."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="textContent" static="false" visibility="public">
+    <default>null</default>
+    <docblock>
+      <description compact="The text content of this node and its descendants."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Creates a new DOMDocument object&#10;  "/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="version" optional="true" byreference="false" type="string"/>
+    <parameter name="encoding" optional="true" byreference="false" type="string"/>
+  </constructor>
+  <method name="createAttribute" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Create new attribute"/>
+      <return type="DOMAttr"/>
+    </docblock>
+    <parameter name="name" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="createAttributeNS" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Create new attribute node with an associated namespace&#10;  "/>
+      <return type="DOMAttr"/>
+    </docblock>
+    <parameter name="namespaceURI" optional="false" byreference="false" type="string"/>
+    <parameter name="qualifiedName" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="createCDATASection" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Create new cdata node"/>
+      <return type="DOMCDATASection"/>
+    </docblock>
+    <parameter name="data" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="createComment" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Create new comment node"/>
+      <return type="DOMComment"/>
+    </docblock>
+    <parameter name="data" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="createDocumentFragment" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Create new document fragment"/>
+      <return type="DOMDocumentFragment"/>
+    </docblock>
+  </method>
+  <method name="createElement" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Create new element node"/>
+      <return type="DOMElement"/>
+    </docblock>
+    <parameter name="name" optional="false" byreference="false" type="string"/>
+    <parameter name="value" optional="true" byreference="false" type="string"/>
+  </method>
+  <method name="createElementNS" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Create new element node with an associated namespace&#10;  "/>
+      <return type="DOMElement"/>
+    </docblock>
+    <parameter name="namespaceURI" optional="false" byreference="false" type="string"/>
+    <parameter name="qualifiedName" optional="false" byreference="false" type="string"/>
+    <parameter name="value" optional="true" byreference="false" type="string"/>
+  </method>
+  <method name="createEntityReference" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Create new entity reference node"/>
+      <return type="DOMEntityReference"/>
+    </docblock>
+    <parameter name="name" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="createProcessingInstruction" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Creates new PI node"/>
+      <return type="DOMProcessingInstruction"/>
+    </docblock>
+    <parameter name="target" optional="false" byreference="false" type="string"/>
+    <parameter name="data" optional="true" byreference="false" type="string"/>
+  </method>
+  <method name="createTextNode" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Create new text node"/>
+      <return type="DOMText"/>
+    </docblock>
+    <parameter name="content" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="getElementById" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Searches for an element with a certain id">This function is similar to but searches for an element with a given id.</description>
+      <return type="DOMElement"/>
+    </docblock>
+    <parameter name="elementId" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="getElementsByTagName" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Searches for all elements with given local tag name"/>
+      <return type="DOMNodeList"/>
+    </docblock>
+    <parameter name="name" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="getElementsByTagNameNS" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Searches for all elements with given tag name in specified namespace&#10;  "/>
+      <return type="DOMNodeList"/>
+    </docblock>
+    <parameter name="namespaceURI" optional="false" byreference="false" type="string"/>
+    <parameter name="localName" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="importNode" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Import node into current document"/>
+      <return type="DOMNode"/>
+    </docblock>
+    <parameter name="importedNode" optional="false" byreference="false" type="object" class="DOMNode"/>
+    <parameter name="deep" optional="true" byreference="false" type="object" class="bool"/>
+  </method>
+  <method name="load" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Load XML from a file&#10;  "/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="filename" optional="false" byreference="false" type="string"/>
+    <parameter name="options" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="loadHTML" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Load HTML from a string&#10;  "/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="source" optional="false" byreference="false" type="string"/>
+    <parameter name="options" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="loadHTMLFile" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Load HTML from a file&#10;  "/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="filename" optional="false" byreference="false" type="string"/>
+    <parameter name="options" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="loadXML" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Load XML from a string&#10;  "/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="source" optional="false" byreference="false" type="string"/>
+    <parameter name="options" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="normalizeDocument" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Normalizes the document"/>
+      <return type="void"/>
+    </docblock>
+  </method>
+  <method name="registerNodeClass" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="Register extended class used to create base node type">This method allows you to register your own extended DOM class to be used afterward by the PHP DOM extension.</description>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="baseclass" optional="false" byreference="false" type="string"/>
+    <parameter name="extendedclass" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="relaxNGValidate" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Performs relaxNG validation on the document&#10;  "/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="filename" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="relaxNGValidateSource" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Performs relaxNG validation on the document&#10;  "/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="source" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="save" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;    Dumps the internal XML tree back into a file&#10;  "/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="filename" optional="false" byreference="false" type="string"/>
+    <parameter name="options" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="saveHTML" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Dumps the internal document into a string using HTML formatting&#10;  "/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="node" optional="true" byreference="false" type="object" class="DOMNode"/>
+  </method>
+  <method name="saveHTMLFile" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Dumps the internal document into a file using HTML formatting&#10;  "/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="filename" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="saveXML" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Dumps the internal XML tree back into a string&#10;  "/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="node" optional="true" byreference="false" type="object" class="DOMNode"/>
+    <parameter name="options" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="schemaValidate" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Validates a document based on a schema&#10;  "/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="filename" optional="false" byreference="false" type="string"/>
+    <parameter name="flags" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="schemaValidateSource" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Validates a document based on a schema&#10;  "/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="source" optional="false" byreference="false" type="string"/>
+    <parameter name="flags" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="validate" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Validates the document based on its DTD&#10;  ">Validates the document based on its DTD.</description>
+      <return type="bool"/>
+    </docblock>
+  </method>
+  <method name="xinclude" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact="&#10;   Substitutes XIncludes in a DOMDocument Object&#10;  ">This method substitutes XIncludes in a DOMDocument object.</description>
+      <return type="int"/>
+    </docblock>
+    <parameter name="options" optional="true" byreference="false" type="int"/>
+  </method>
+  <method name="appendChild" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="DOMNode"/>
+    </docblock>
+    <parameter name="newnode" optional="false" byreference="false" type="object" class="DOMNode"/>
+  </method>
+  <method name="C14N" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="exclusive" optional="true" byreference="false" type="object" class="bool"/>
+    <parameter name="with_comments" optional="true" byreference="false" type="object" class="bool"/>
+    <parameter name="xpath" optional="true" byreference="false" type="object" class="array"/>
+    <parameter name="ns_prefixes" optional="true" byreference="false" type="object" class="array"/>
+  </method>
+  <method name="C14NFile" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="int"/>
+    </docblock>
+    <parameter name="uri" optional="false" byreference="false" type="string"/>
+    <parameter name="exclusive" optional="true" byreference="false" type="object" class="bool"/>
+    <parameter name="with_comments" optional="true" byreference="false" type="object" class="bool"/>
+    <parameter name="xpath" optional="true" byreference="false" type="object" class="array"/>
+    <parameter name="ns_prefixes" optional="true" byreference="false" type="object" class="array"/>
+  </method>
+  <method name="cloneNode" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="DOMNode"/>
+    </docblock>
+    <parameter name="deep" optional="true" byreference="false" type="object" class="bool"/>
+  </method>
+  <method name="getLineNo" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getNodePath" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="hasAttributes" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="bool"/>
+    </docblock>
+  </method>
+  <method name="hasChildNodes" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="bool"/>
+    </docblock>
+  </method>
+  <method name="insertBefore" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="DOMNode"/>
+    </docblock>
+    <parameter name="newnode" optional="false" byreference="false" type="object" class="DOMNode"/>
+    <parameter name="refnode" optional="true" byreference="false" type="object" class="DOMNode"/>
+  </method>
+  <method name="isDefaultNamespace" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="namespaceURI" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="isSameNode" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="node" optional="false" byreference="false" type="object" class="DOMNode"/>
+  </method>
+  <method name="isSupported" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="bool"/>
+    </docblock>
+    <parameter name="feature" optional="false" byreference="false" type="string"/>
+    <parameter name="version" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="lookupNamespaceUri" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="prefix" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="lookupPrefix" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="namespaceURI" optional="false" byreference="false" type="string"/>
+  </method>
+  <method name="normalize" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="void"/>
+    </docblock>
+  </method>
+  <method name="removeChild" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="DOMNode"/>
+    </docblock>
+    <parameter name="oldnode" optional="false" byreference="false" type="object" class="DOMNode"/>
+  </method>
+  <method name="replaceChild" abstract="false" static="false" visibility="public" final="false">
+    <docblock>
+      <description compact=""/>
+      <return type="DOMNode"/>
+    </docblock>
+    <parameter name="newnode" optional="false" byreference="false" type="object" class="DOMNode"/>
+    <parameter name="oldnode" optional="false" byreference="false" type="object" class="DOMNode"/>
+  </method>
+</class>

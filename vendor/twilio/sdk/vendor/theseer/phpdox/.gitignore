@@ -1,0 +1,13 @@
+/.buildpath
+/.project
+/.settings
+/.idea
+/build
+/phpunit.xml
+/phpdoc
+/sample
+/vendor
+/tests/data/*/xml
+/tests/data/*/docs
+/tools
+.php_cs.cache

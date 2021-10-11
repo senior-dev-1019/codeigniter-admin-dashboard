@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\BSON\MinKey" namespace="MongoDB\BSON" name="MinKey">
+  <implements name="MongoDB\BSON\MinKeyInterface" full="MongoDB\BSON\MinKeyInterface"/>
+  <constructor name="__construct" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Construct a new MinKey"/>
+      <return type="void"/>
+    </docblock>
+  </constructor>
+  <method name="jsonSerialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns a representation that can be converted to JSON"/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="serialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Serialize a MinKey"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="unserialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Unserialize a MinKey"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="serialized" optional="false" byreference="false" type="string"/>
+  </method>
+</class>

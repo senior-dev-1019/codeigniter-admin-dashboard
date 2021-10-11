@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\BSON\Int64" namespace="MongoDB\BSON" name="Int64">
+  <implements name="MongoDB\BSON\Type" full="MongoDB\BSON\Type"/>
+  <constructor name="__construct" abstract="false" static="false" final="true">
+    <docblock>
+      <description compact="Construct a new Int64 (unused)"/>
+      <return type="void"/>
+    </docblock>
+  </constructor>
+  <method name="jsonSerialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns a representation that can be converted to JSON"/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="serialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Serialize an Int64"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="__toString" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns the string representation of this Int64"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="unserialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Unserialize an Int64"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="serialized" optional="false" byreference="false" type="string"/>
+  </method>
+</class>

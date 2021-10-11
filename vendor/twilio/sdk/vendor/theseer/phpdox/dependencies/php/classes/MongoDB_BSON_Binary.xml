@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\BSON\Binary" namespace="MongoDB\BSON" name="Binary">
+  <implements name="MongoDB\BSON\BinaryInterface" full="MongoDB\BSON\BinaryInterface"/>
+  <constant name="TYPE_GENERIC" value="0">
+    <docblock>
+      <var type="integer"/>
+    </docblock>
+  </constant>
+  <constant name="TYPE_FUNCTION" value="1">
+    <docblock>
+      <var type="integer"/>
+    </docblock>
+  </constant>
+  <constant name="TYPE_OLD_BINARY" value="2">
+    <docblock>
+      <var type="integer"/>
+    </docblock>
+  </constant>
+  <constant name="TYPE_OLD_UUID" value="3">
+    <docblock>
+      <var type="integer"/>
+    </docblock>
+  </constant>
+  <constant name="TYPE_UUID" value="4">
+    <docblock>
+      <var type="integer"/>
+    </docblock>
+  </constant>
+  <constant name="TYPE_MD5" value="5">
+    <docblock>
+      <var type="integer"/>
+    </docblock>
+  </constant>
+  <constant name="TYPE_USER_DEFINED" value="128">
+    <docblock>
+      <var type="integer"/>
+    </docblock>
+  </constant>
+  <constructor name="__construct" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Construct a new Binary"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="data" optional="false" byreference="false" type="string"/>
+    <parameter name="type" optional="false" byreference="false" type="int"/>
+  </constructor>
+  <method name="getData" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns the Binary's data"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getType" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns the Binary's type"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="jsonSerialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns a representation that can be converted to JSON"/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="serialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Serialize a Binary"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="__toString" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns the Binary's data"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="unserialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Unserialize a Binary"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="serialized" optional="false" byreference="false" type="string"/>
+  </method>
+</class>

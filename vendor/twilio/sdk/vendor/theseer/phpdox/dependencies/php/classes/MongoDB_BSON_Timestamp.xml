@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class xmlns="http://xml.phpdox.net/src" full="MongoDB\BSON\Timestamp" namespace="MongoDB\BSON" name="Timestamp">
+  <implements name="MongoDB\BSON\TimestampInterface" full="MongoDB\BSON\TimestampInterface"/>
+  <constructor name="__construct" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Construct a new Timestamp"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="increment" optional="false" byreference="false" type="int"/>
+    <parameter name="timestamp" optional="false" byreference="false" type="int"/>
+  </constructor>
+  <method name="getIncrement" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns the increment component of this Timestamp"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="getTimestamp" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns the timestamp component of this Timestamp"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="jsonSerialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns a representation that can be converted to JSON"/>
+      <return type="mixed"/>
+    </docblock>
+  </method>
+  <method name="serialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Serialize a Timestamp"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="__toString" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Returns the string representation of this Timestamp"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="unserialize" abstract="false" static="false" visibility="public" final="true">
+    <docblock>
+      <description compact="Unserialize a Timestamp"/>
+      <return type="void"/>
+    </docblock>
+    <parameter name="serialized" optional="false" byreference="false" type="string"/>
+  </method>
+</class>

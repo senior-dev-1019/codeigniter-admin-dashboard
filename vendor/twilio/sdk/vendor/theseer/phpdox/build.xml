@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="phpDox" default="build" basedir=".">
+    <property name="source" value="src"/>
+
+    <target name="clean" description="Clean up and create artifact directories">
+        <delete dir="${basedir}/build/api"/>
+        <delete dir="${basedir}/build/coverage"/>
+        <delete dir="${basedir}/build/logs"/>
+        <delete dir="${basedir}/build/pdepend"/>
+
+        <mkdir dir="${basedir}/build/api"/>
+        <mkdir dir="${basedir}/build/coverage"/>
+        <mkdir dir="${basedir}/build/logs"/>
+        <mkdir dir="${basedir}/build/pdepend"/>
+    </target>
+
+    <target name="phpab">
+        <exec executable="${basedir}/tools/phpab">
+            <arg line="--cache ${basedir}/build/phpab/autoload.cache -o src/autoload.php" />
+            <arg path="src" />
+        </exec>
+    </target>
+
+    <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
+        <exec executable="${basedir}/tools/phpunit" failonerror="true"/>
+    </target>
+
+    <target name="phpmd" description="Generate pmd.xml using PHPMD">
+        <exec executable="${basedir}/tools/phpmd">
+            <arg line="${source}
+              xml
+              codesize,design,naming,unusedcode
+              --reportfile ${basedir}/build/logs/pmd.xml"/>
+        </exec>
+    </target>
+
+    <target name="phpcpd" description="Generate pmd-cpd.xml using PHPCPD">
+        <exec executable="${basedir}/tools/phpcpd">
+            <arg line="--log-pmd ${basedir}/build/logs/pmd-cpd.xml ${source}"/>
+        </exec>
+    </target>
+
+    <target name="phploc" description="Generate phploc.xml">
+        <exec executable="${basedir}/tools/phploc">
+            <arg line="--count-tests --log-xml ${basedir}/build/logs/phploc.xml ${source} tests"/>
+        </exec>
+    </target>
+
+    <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
+        <exec executable="phpcs" output="/dev/null">
+            <arg line="--report=checkstyle
+              --report-file=${basedir}/build/logs/checkstyle.xml
+              --standard=phpcs.xml
+              ${source}"/>
+        </exec>
+    </target>
+
+    <target name="api">
+        <delete dir="${basedir}/build/api" />
+        <exec executable="${basedir}/phpdox" />
+    </target>
+
+    <target name="phar" description="Create PHAR archive of phpDox and its dependencies">
+
+        <delete dir="${basedir}/build/phar/_tmp"/>
+        <mkdir dir="${basedir}/build/phar/_tmp"/>
+
+        <delete>
+            <fileset dir="${basedir}/build/phar">
+                <include name="**/*.phar"/>
+            </fileset>
+        </delete>
+
+        <exec executable="bash" outputproperty="version">
+            <arg value="-c"/>
+            <arg value="${basedir}/phpdox --version | awk 'BEGIN { ORS = &quot;&quot;; } {print $2}'"/>
+        </exec>
+
+        <copy todir="${basedir}/build/phar/_tmp/phpdox">
+            <fileset dir="${basedir}/src"/>
+        </copy>
+        <copy todir="${basedir}/build/phar/_tmp/bootstrap">
+            <fileset dir="${basedir}/bootstrap"/>
+        </copy>
+        <copy todir="${basedir}/build/phar/_tmp/templates">
+            <fileset dir="${basedir}/templates"/>
+        </copy>
+         <copy todir="${basedir}/build/phar/_tmp/dependencies">
+            <fileset dir="${basedir}/dependencies"/>
+        </copy>
+        <copy todir="${basedir}/build/phar/_tmp/vendor">
+            <fileset dir="${basedir}/vendor">
+                <include name="nikic/php-parser/lib/**" />
+                <include name="phpunit/php-timer/src/**" />
+                <include name="theseer/*/src/**" />
+            </fileset>
+        </copy>
+
+        <delete>
+            <fileset dir="${basedir}/build/phar/_tmp">
+                <include name="**/autoload.php"/>
+                <include name="**/Autoload.php"/>
+                <include name="**/Autoload.php.in"/>
+                <include name="**/package.sig"/>
+                <include name="**/package.xml"/>
+                <include name="**/composer.json"/>
+                <include name="**/*.md"/>
+                <include name="**/docs/**"/>
+                <include name="**/design/**"/>
+                <include name="**/grammar/**"/>
+            </fileset>
+        </delete>
+
+        <exec executable="${basedir}/tools/phpab" failonerror="true">
+            <arg value="--var"/>
+            <arg value="VERSION=${version}"/>
+            <arg value="--all"/>
+            <arg value="--phar"/>
+            <arg value="--alias" />
+            <arg value="phpdox.phar" />
+            <arg value="--gzip"/>
+            <arg value="--output"/>
+            <arg path="${basedir}/build/phar/phpdox-${version}.phar"/>
+            <arg value="--template"/>
+            <arg path="${basedir}/build/phar/autoload.php.in"/>
+            <arg path="${basedir}/build/phar/_tmp"/>
+        </exec>
+
+        <chmod file="${basedir}/build/phar/phpdox-${version}.phar" perm="ugo+rx"/>
+        <delete dir="${basedir}/build/phar/_tmp"/>
+    </target>
+
+
+    <target name="release" description="Make a release based on latest tag">
+
+        <exec executable="bash" outputproperty="version">
+            <arg value="-c"/>
+            <arg value="${basedir}/build/phar/phpdox*.phar --version | awk 'BEGIN { ORS = &quot;&quot;; } {print $2}'"/>
+        </exec>
+
+        <exec executable="gpg">
+            <arg value="--local-user" />
+            <arg value="arne@blankerts.de" />
+            <arg value="--detach-sign" />
+            <arg value="--armor" />
+            <arg value="--output" />
+            <arg path="${basedir}/build/phar/phpdox-${version}.phar.asc" />
+            <arg path="${basedir}/build/phar/phpdox-${version}.phar" />
+        </exec>
+
+    </target>
+
+    <target name="getphive" description="Get phive on travis-ci">
+        <exec executable="wget" taskname="wget">
+            <arg value="https://phar.io/releases/phive.phar"/>
+        </exec>
+        <exec executable="wget" taskname="wget">
+            <arg value="https://phar.io/releases/phive.phar.asc"/>
+        </exec>
+        <exec executable="gpg" taskname="gpg-get-key">
+            <arg line="--keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79" />
+        </exec>
+        <exec executable="gpg" taskname="gpg-verify">
+            <arg line="--verify phive.phar.asc phive.phar" />
+        </exec>
+        <chmod file="phive.phar" perm="+x" />
+        <delete file="phive.phar.asc" />
+    </target>
+
+    <target name="build" depends="clean,phpab,phpunit"/>
+</project>

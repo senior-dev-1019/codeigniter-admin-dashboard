@@ -1,0 +1,101 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #6e707e;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #6e707e;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #6e707e;
+}
+
+#main-container {
+    padding: 20px;
+}
+.post-date {
+    background-color: #f4f4f4;
+    padding: 4px;
+    margin: 4px;
+    display: block;
+}
+
+
+table.dataTable>thead .sorting:before,
+table.dataTable>thead .sorting_asc:before,
+table.dataTable>thead .sorting_desc:before,
+table.dataTable>thead .sorting_asc_disabled:before,
+table.dataTable>thead .sorting_desc_disabled:before {
+    margin: 0 5px;
+}
+
+footer.sticky-footer {
+    margin-top: 35px;
+}
+
+
+.form-control {
+    color:#000 !important;
+}
+
+hr {
+    border-top: 1px solid rgb(0 0 0 / 0%) !important;
+}
+
+h3.hidden.title {
+  display: none !important;
+}
+
+
+@media (min-width: 1200px) {
+  admin.min.css:10:6487.container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 100% !important;
+  }
+}
+
+
+.card {
+    margin-bottom: 30px;
+}
+
+
+input[type="file"] {
+    border: 0px solid #ccc !important;
+}
+
+
+.login-form {
+    display: table;
+    padding: 20px 20px 45px;
+    background: #fff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#login {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(https://www.stroom-storing.nl/wp-content/uploads/2021/05/Stroom-storing-banner-smaller-1024x684.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+div#email_result {
+    margin-top: 15px;
+}
+
+
+.note-wrapper {
+    margin-bottom: 25px;
+}
+
+span.date {
+    font-size: 14px;
+}
