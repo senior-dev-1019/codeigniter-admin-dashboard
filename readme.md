@@ -10,10 +10,6 @@ interface and logical structure to access these libraries. CodeIgniter lets
 you creatively focus on your project by minimizing the amount of code needed
 for a given task.
 
-<div align="center">
-<img width="250" align="top" src="assets/images/dashboard.png">
-</div>
-
 ![Admin Dashboard](assets/images/dashboard.png)
 
 *******************
